@@ -92,6 +92,25 @@ The test cases are organized in the `tests/test_web.py` file. Each test case use
     - Clicks the change password button
     - Asserts successful password change by checking the page content
 
+- **Search Test:**
+    - Opens the home page
+    - Enters a search query
+    - Submits the search form
+    - Asserts that the search results page is displayed
+
+- **Navigation Test:**
+    - Opens the home page
+    - Clicks on a link
+    - Asserts that the expected page is displayed
+
+- **Form Submission Test:**
+    - Opens the form page
+    - Enters text into a text field
+    - Selects an option from a dropdown
+    - Checks a checkbox
+    - Submits the form
+    - Asserts that the form submission was successful
+
 ## License
 
 This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
