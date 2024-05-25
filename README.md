@@ -58,6 +58,15 @@ Selenium-in-Docker/
 
     Uncomment the relevant function call in `run_tests.py` to execute specific test groups (login, registration, or change password).
 
+    ```bash
+    docker run --rm selenium-docker-test pytest -m login --html=report_login.html
+    docker run --rm selenium-docker-test pytest -m register --html=report_register.html
+    docker run --rm selenium-docker-test pytest -m change_password --html=report_change_password.html
+    docker run --rm selenium-docker-test pytest -m search --html=report_search.html
+    docker run --rm selenium-docker-test pytest -m navigation --html=report_navigation.html
+    docker run --rm selenium-docker-test pytest -m form_submission --html=report_form_submission.html
+    ```
+    
 ### Without Docker
 
 1. **Run all tests:**
