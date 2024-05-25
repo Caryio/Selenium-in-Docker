@@ -1,6 +1,6 @@
 # Web Automation Testing with Selenium & Docker
 
-This project demonstrates how to use Selenium with Docker to perform automated testing on a web application. The project includes login, registration, and password change test cases, all written in Python using the Pytest framework.
+This project uses Selenium with Docker to manage automated testing on a web app. The project includes several test cases demo, all written in Python using the Pytest framework.
 
 ## Project Structure
 ```
