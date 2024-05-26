@@ -1,9 +1,21 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import os
 
 @pytest.fixture(scope="module")
 def browser():
-    driver = webdriver.Chrome()
+    selenium_host = os.getenv('SELENIUM_HOST', 'localhost')
+    selenium_port = os.getenv('SELENIUM_PORT', '4444')
+    selenium_url = f'http://{selenium_host}:{selenium_port}/wd/hub'
+    
+    options = webdriver.ChromeOptions()
+    driver = webdriver.Remote(
+        command_executor=selenium_url,
+        options=options,
+        desired_capabilities=DesiredCapabilities.CHROME,
+    )
     yield driver
     driver.quit()
 
