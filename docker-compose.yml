@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"
+
+  webapp:
+    build: .
+    volumes:
+      - .:/app
+    depends_on:
+      - selenium
+    environment:
+      - SELENIUM_HOST=selenium
+      - SELENIUM_PORT=4444
+    command: ["python", "run_tests.py"]
